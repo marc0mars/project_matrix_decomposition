@@ -3,6 +3,7 @@ using Random
 using Test
 using Permutations
 # here stood include("./guass.jl") <-- test for github
+# Now Main is editing the same line
 
 #include("./gauss.jl")
 
