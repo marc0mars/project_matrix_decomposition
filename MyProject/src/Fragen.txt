@@ -1,0 +1,55 @@
+1)  struct Band <: Matrix
+        q::Int64
+        p::Int64
+    end
+    führt zu LoadError: invalid subtyping in definition of Band
+    Matrix ist vom Typ UnionAll, also kein DataType. Auch kann ich <: hier nicht verwenden. (Siehe auch 2)
+
+2)  Wie kann ich meinen eigenen Typ für Bandmatrizen erstellen mit den Parametern p und q für die Anzahl der unteren und oberen Nebendiagonalen. Wie würde ich das also möglichst Julia-artig angehen. 
+    Wie kann ich das außerdem gut abspeichern? Denn ich möchte dann natürlich eigentlich nicht n*m Speicherplätze verbrauchen
+    
+4)  Kann ich meine Methoden auch implementieren, ohne die Matrix in Float umzuwandeln (ich mache meistens N = Matrix{Float}copy(M))?
+    Ich bekomme sonst immer einen Fehler, der sich beschwert über die Exaktheit, wenn ich eine Integermatrix übergebe. 
+    (die Frage bezieht sich auf gauss.jl)
+
+7)  Inplace-Algorithmus bedeutet, dass man keinen neuen Speicherplatz benötigt außerhalb der Inputwerte, oder?
+
+8)  Die am Ende zu zerlegende Matrix ist symmetrisch und tridiagonal, aber nicht zwangsläufig reell, oder? Ich meine die eigentliche Aufgabe des Projekts
+
+9)  Mir ist aufgefallen, dass ich in der Linearen Algebra Mängel habe, weil wir zum Beispiel in der LA2 nicht einmal den Spektralsatz gemacht haben oder den Begriff "normal" eingeführt haben. Wo kann ich das gut wiederholen? Soll ich dafür einfach den Fischer verwenden? Welche Begriffe brauche ich unbedingt bei der Fortführung des Projekts (Eine Liste wäre hier super, dann bringe ich mir das als Grundbegriffe selbst bei)?
+    
+10) Das Arbeiten mit einer Programmiersprache macht mir Spaß und auch den Computer und die ganze Technik als Gegenstand zu haben, finde ich motivierend.
+    Aber gerade das vorankommen nach den einfach Standardsytanx-Einführungen finde ich sehr mühsam. 
+    Oft habe ich das Gefühl, ich kenne den entsprechenden Begriff aus der Informatik einfach nicht. Und manchmal denke ich auch, dass mir die Möglichkeit fehlt, anhand eines "Leitfadens" zu prüfen, ob sich meine Fähigkeiten verbessern. 
+    Zum einen habe ich das Problem bemerkt, dass ich in keiner Programmiersprache sehr tiefes Wissen habe, sondern nur auf der Oberfläche schwimme und dann nach einiger Zeit wieder aufgehört habe in dieser oder jener Sprache zu programmieren, weil ein bisschen das Projekt gefehlt hat. Das ist im Nachhinein sehr frustrierend und ich möchte bei Julia unbedingt dabeibleiben oder es später auch sinnvoll mit Pyhton verbinden.
+    Ist dieses Gefühl normal für den Einstieg? 
+    Kann ich mein Arbeiten hier zielgerichteter machen? Denn wie schon gesagt möchte ich dieses Projekt wirklich abschließen und dann danach auch darauf aufbauen.
+    Wie weite ich also am besten auch zugleich mein Informatikwissen gut aus? (Das macht mir nämlich ebenfalls sehr viel Spaß, zu wissen, was da passiert)
+
+11) Ist diese Vorlesung eine gute Idee? Und falls ja, wann? Nach dem Projekt? https://www.youtube.com/watch?v=vxjRWtWoD_w&list=PLP8iPy9hna6Q2Kr16aWPOKE0dz9OnsnIJ
+
+------- neue Fragen
+
+12)     Vector{Vector{Int}}(undef, 10) erstellt mir eine Hülle eines Arrays, das 10 Int-Arrays enthalten soll. Warum verwendet man das? Zur Orientierung? Baut der Compiler daraus ein schnelleres Programm?
+
+13)     Was ist der Unterschied zwischen [[1, 2, 3],[1, 2, 3],[1, 2, 3]] und [1 2 3; 1 2 3; 1 2 3]? Das erste ist ein eindim Array von eindim Arrays (Synonym in Julia: Ein Vektor von Vektoren), das zweite ist ein zweidim Array (Synonym in Julia: Eine Matrix).
+        Warum macht man diesen Unterschied? 
+
+14)     Was genau ist memory allocation? Wie viel neuer Speicherplatz von einer Funktion belegt wurde? 
+
+15)     Wie entgehe ich LoadError: InexactError: Int64(0.08), wenn ich meine Matrix vom Typ Matrix{Int64} ist?
+
+! 16)   Gibt es in Julia die Möglichkeit irgendwie auch mit reellen Zahlen exakt zu rechnen? Also z.B. exakte Zerlegungen zu produzieren?
+
+! 17)   In in gauss.jl gibt es eine Methode array_product, allerdings weiß ich nicht wie ich sie implementieren könnte, sodass sie mit mehr Typen funktioniert. Konkret weiß ich nicht, wie man bei einem bestimmten Typen an sein multiplikativ neutrales Element, also an sein 1-Element kommt
+
+------- Fragen Lineare Algebra
+
+18) Wofür benötigt man die Polarisierungsidentität?
+
+------- Fragen: Paper A pivoting strategy for symmetric tridiagonal matrices
+* bedeutet irrelevant und eher als Kontrolle
+*1)      S.1, Introduction m.E. müssten x und y getauscht werden, damit es einheitlich. Ich finde es ein bisschen unnötig, dass T noch transponiert wurde
+*2)      S.3, Nach (1) T_21 = 0 aber natürlich nur, wenn man oben s=1 und nicht s=2 wählt
+3)       Wie würde man das Schur Komplement entdecken? 
+4)       S.3, Algorithm 2.1 Warum kann sigma nicht auch der Betrag von a_11 sein. Überhaupt wundere ich mich hier, warum gerade der goldene Schnitt relevant ist bzw. warum man darauf kommen sollte.
