@@ -2,7 +2,7 @@ using LinearAlgebra
 using Random
 using Test
 using Permutations
-include("./gauss.jl")
+# here stood include("./guass.jl") <-- test for github
 
 #include("./gauss.jl")
 
