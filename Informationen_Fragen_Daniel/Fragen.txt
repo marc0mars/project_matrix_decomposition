@@ -55,4 +55,4 @@
 4)       S.3, Algorithm 2.1 Warum kann sigma nicht auch der Betrag von a_11 sein. Überhaupt wundere ich mich hier, warum gerade der goldene Schnitt relevant ist bzw. warum man darauf kommen sollte.
 
 ------- Fragen: GitHub
-1)      Was genau ist "origin"
+1)      Was genau ist "origin"?
