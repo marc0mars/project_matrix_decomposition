@@ -53,6 +53,9 @@
 *2)      S.3, Nach (1) T_21 = 0 aber natürlich nur, wenn man oben s=1 und nicht s=2 wählt
 3)       Wie würde man das Schur Komplement entdecken? 
 4)       S.3, Algorithm 2.1 Warum kann sigma nicht auch der Betrag von a_11 sein. Überhaupt wundere ich mich hier, warum gerade der goldene Schnitt relevant ist bzw. warum man darauf kommen sollte.
+5)       S.6, Was ist "2x2 pivot E" für ein Objekt in Theorem 5
+
+Begriffe: Gaussian elimination, Cholesky Factorization, LDLT decomposition, Schurcomplement, normwise backward stable, singular, growth factor roh_n, pivoting strategy, tight bound (p.6 3.2), model floating point arithmetic, 2x2 pivot, flop
 
 ------- Fragen: GitHub
 1)      Was genau ist "origin"?
