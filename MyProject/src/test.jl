@@ -2,7 +2,7 @@ using LinearAlgebra
 using Random
 using Test
 using Permutations
-include("./gauss.jl")
+# Now Main is editing the same line
 
 #include("./gauss.jl")
 
