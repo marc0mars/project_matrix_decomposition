@@ -59,3 +59,8 @@ Begriffe: Gaussian elimination, Cholesky Factorization, LDLT decomposition, Schu
 
 ------- Fragen: GitHub
 1)      Was genau ist "origin"?
+
+----- Probleme(?) bei Julia (oder bei meiner Anwendung :D)
+
+------- nicht eindeutig zuordbar
+1) Wie sehen alle Einheitsbälle aller Normen im R^2 aus? Die Frage braucht zusätzliche Erklärung. Am besten manchen wir das einmal mündlich
