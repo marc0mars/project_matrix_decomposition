@@ -2,10 +2,8 @@ using LinearAlgebra
 using Random
 using Test
 using Permutations
-# here stood include("./guass.jl") <-- test for github
-# Now Main is editing the same line
 
-#include("./gauss.jl")
+include("./gauss.jl")
 
 # Band = Matrix{Float64}([(j < i-5 || j > i+3) ? 0.0 : rand(1:10) for i in 1:10, j in 1:10])
 
@@ -49,6 +47,9 @@ A = rand(1:10, 5, 5)
 display(A)
 println(findmax(A[2:2,1:2]))
 =#
+A = [2 1 1; -2 -2 1; 4 4 1]
+display(left_right_decomposition_version_2(A)[1])
+display(left_right_decomposition_version_2(A)[2])
 
 @testset "lu_decomp_pivot" begin
     for i in 1:1
