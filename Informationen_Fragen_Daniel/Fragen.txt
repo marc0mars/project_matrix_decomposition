@@ -62,5 +62,7 @@ Begriffe: Gaussian elimination, Cholesky Factorization, LDLT decomposition, Schu
 
 ----- Probleme(?) bei Julia (oder bei meiner Anwendung :D)
 
-------- nicht eindeutig zuordbar
-1) Wie sehen alle Einheitsbälle aller Normen im R^2 aus? Die Frage braucht zusätzliche Erklärung. Am besten manchen wir das einmal mündlich
+------- nicht eindeutig zuordbar, auch nicht unbedingt Fragen, sondern oft auch Unsicherheiten
+1) Wie sehen alle Einheitsbälle aller Normen im R^2 aus? Die Frage braucht zusätzliche Erklärung. Am besten manchen wir das einmal mündlich?
+2) Zwei-Norm einer Matrix entspricht auch der größten Bilinearmultipliktation (auch hier muss ich noch etwas erläutern)
+3) Sei V ein normierter Vektorraum, dessen Metrik induziert sei durch die Norm. S = {v aus V für die gilt norm(v) = 1} ist dann kompakt. Überhaupt braucht der Beweis für die Äquivalenz von Normen im Detail doch einige Resultate
