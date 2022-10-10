@@ -56,15 +56,27 @@
 *1)      S.1, Introduction m.E. müssten x und y getauscht werden, damit es einheitlich. Ich finde es ein bisschen unnötig, dass T noch transponiert wurde
 *2)      S.3, Nach (1) T_21 = 0 aber natürlich nur, wenn man oben s=1 und nicht s=2 wählt
 3)       Wie würde man das Schur Komplement entdecken? 
-4)       S.3, Algorithm 2.1 Warum kann sigma nicht auch der Betrag von a_11 sein. Überhaupt wundere ich mich hier, warum gerade der goldene Schnitt relevant ist bzw. warum man darauf kommen sollte.
+4)       S.3, Algorithm 2.1 Warum kann sigma nicht auch der Betrag von a_11 sein. Überhaupt wundere ich mich hier, warum gerade der goldene Schnitt relevant ist bzw. warum man darauf kommen sollte. --> Hat sich im anderen Paper geklärt
 5)       S.6, Was ist "2x2 pivot E" für ein Objekt in Theorem 5
 
 Begriffe: Gaussian elimination, Cholesky Factorization, LDLT decomposition, Schurcomplement, normwise backward stable, singular, growth factor roh_n, pivoting strategy, tight bound (p.6 3.2), model floating point arithmetic, 2x2 pivot, flop
+
+------- Fragen: Paper Stability of block ldlt decomposition
+1)      Was ist die inertia einer Matrix
+2)      Was ist das Standardmodell für flops bzw. kannst du mir das von Higham benutze genauer erklären
+3)      Die beiden Paper lesen sich zum Teil quasi identisch, das etwas längere Paper ermöglicht noch die Berechnung der decomposition, während die Matrix befüllt wird. Sie wollen beide das gleiche für ihre eigenen leicht abgewandelten Algorithmen zeigen, wobei man sich an dem früheren Paper orieniert
+4)      Beim Theorem 3.1 verstehe ich nicht warum "the computed solution x_hat satisfies ... = y_hat", warum dann nicht gleich y_hat am Anfang?
+5)      Welche Norm wird in dem Paper für Matrizen verwendet? Die 2-Norm? Bzw. inwiefern spielt das keine Rolle, denn die Matrixnormen sind im C und R sowieso alle äquivalent 
+
+------- Fragen: Bunchkaufman.jl
+1) Verstehe ich es richtig, dass ich die tridiagonale Matrix, die dabei entsteht dann weiter zerlegen soll?
+2) was bedeutet uplo?
 
 ------- Fragen: GitHub
 1)      Was genau ist "origin"?
 
 ----- Probleme(?) bei Julia (oder bei meiner Anwendung :D)
+1)      display(...) verwendet beim Aufruf der .jl Datei im Terminal keine Zeilenumbrüche
 
 ------- nicht eindeutig zuordbar, auch nicht unbedingt Fragen, sondern oft auch Unsicherheiten
 1) Wie sehen alle Einheitsbälle aller Normen im R^2 aus? Die Frage braucht zusätzliche Erklärung. Am besten manchen wir das einmal mündlich?

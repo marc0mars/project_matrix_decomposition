@@ -3,7 +3,9 @@ log of consistent literature that I have read. Ommited are single pages, videos 
 25 to 49            https://people.math.ethz.ch/~grsam/Num_Meth_SS06/skript210406.pdf 
 on documentation    https://www.matecdev.com/posts/julia-package-collaboration.html
 Variante 1,2        http://programming-julia.de/kombinatorik/Permutationen/
-69 to 72, 153 to 166https://www.math.uni-bielefeld.de/~preston/teaching/linalg/files/linalg.pdf
+69 to 72, 153 to 170https://www.math.uni-bielefeld.de/~preston/teaching/linalg/files/linalg.pdf
 (interessante Seite)https://learn.microsoft.com/en-us/training/student-hub/
 first read: 1 to 11 Paper: A pivoting strategy for symmetric tridiagonal matrices
-Woche 1, 2, 3(Hälfte)   https://www.cs.utexas.edu/users/flame/laff/alaff/chapter06-stability-of-a-numerical-algorithm.html
+Woche 1, 2, 3(Hälfte)https://www.cs.utexas.edu/users/flame/laff/alaff/chapter06-stability-of-a-numerical-algorithm.html
+einmal durchgelesen (Details manchmal übersprungen) Stability of block LDLT factorization of a symmetric tridiagonal matrix
+                    https://towardsdatascience.com/a-painfully-in-depth-look-at-constructors-in-julia-2053a69bc8c6
