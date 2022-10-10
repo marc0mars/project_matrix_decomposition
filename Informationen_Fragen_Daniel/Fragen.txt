@@ -43,6 +43,10 @@
 
 ! 17)   In in gauss.jl gibt es eine Methode array_product, allerdings weiß ich nicht wie ich sie implementieren könnte, sodass sie mit mehr Typen funktioniert. Konkret weiß ich nicht, wie man bei einem bestimmten Typen an sein multiplikativ neutrales Element, also an sein 1-Element kommt
 
+18)     Manchmal kann man als Parameter einer Funktion Parameter der Form :stroke übergeben. Was genau ist das? So eine Art "Dropdownauswahl"?
+
+19)     Wie würde man gute Tests für eine QR-Faktorisierung schreiben, wenn man nicht die Funktion aus Julia verwenden möchte?
+
 ------- Fragen Lineare Algebra
 
 18) Wofür benötigt man die Polarisierungsidentität?
