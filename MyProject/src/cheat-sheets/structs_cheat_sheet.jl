@@ -47,7 +47,8 @@ end
 display(Test("Peter"))
 """
 
-#dynamic field types
+# dynamic field types
+"""
 mutable struct Student{T}
     age::Int64
     label::T
@@ -61,3 +62,17 @@ end
 
 display(Student(3,"test"))
 display(Student())
+"""
+
+# Subtyping
+
+abstract type SchoolMember end
+mutable struct Student{T} <: SchoolMember # <---- Subtyping
+    name::String
+    age::Int64
+    label::T
+
+    function Student(name::String, age::Int64, label::Any)
+        new{typeof(label)}(name,age,label)
+    end
+end

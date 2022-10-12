@@ -1,5 +1,6 @@
 using LinearAlgebra
 using Plots
+using Test
 include("./gram_schmidt_orth.jl")
 
 @testset "Q is unitary" begin
