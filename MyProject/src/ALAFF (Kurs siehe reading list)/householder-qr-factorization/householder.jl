@@ -30,7 +30,7 @@ end
 function HQR(A)
     M = copy(A) # this is misleading because we would rather want to implement HQR!(A) but for testing this is more convenient
     m, n = size(M)
-    rank(M) == n || throw(error("This matrix is singular!")) 
+    # rank(M) == n || throw(error("This matrix is singular!")) 
     t = fill(0.0, n)
     for k in 1:n 
         ᵨ, u₂, tau = housev(M[k:m,k]) 
@@ -85,6 +85,14 @@ function householder(A)
     return(Q,R)
 end
 
-function applyQ_adj(y) # y is a Vector
-
+function applyQ_adj(A, t, y) # y is a Vector (mx1) and Q is given within HQR and therefore not explicit, t is also a return value of HQR
+    m = size(A, 1)
+    for k in 1:m
+        # ω is only a helper to make it more readable
+        ω = (y[k]+transpose(A[k+1:m,k])*y[k+1:m])/t[k]
+        # update y
+        y[k] -= ω
+        y[k+1:m] -= A[k+1:m,k]*ω
+    end
+    return y
 end

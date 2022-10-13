@@ -19,7 +19,7 @@ end
 """
 function gram_schmidt(A::Matrix)
     m, n = size(A)
-    rank(A) == n || throw(error("The matrix is singular!"))
+    # rank(A) == n || throw(error("The matrix is singular!"))
     Q = fill(0.0, m, n)
     R = fill(0.0, n, n)
     for k in 1:n
@@ -73,7 +73,7 @@ function gram_schmidt3(A::Matrix)
     M = copy(A)
     n = size(M, 2)
     R = fill(0.0, n, n)
-    rank(M) == n || throw(error("The matrix is singular!"))
+    # rank(M) == n || throw(error("The matrix is singular!"))
     for k in 1:n
         R[k,k] = norm(M[:,k])
         M[:,k] = M[:,k]/R[k,k]

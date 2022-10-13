@@ -13,5 +13,6 @@ include("../Gram-Schmidt/gram_schmidt_orth.jl")
     end
 end
 
-A = rand(10, 7)
-display(transpose(Q_part(HQR(A)[1],HQR(A)[2]))*(Q_part(HQR(A)[1],HQR(A)[2])))
+A = [(i == j) ? 1.0 : 0.0 for i in 1:10, j in 1:10]
+display(applyQ_adj(HQR(A)..., ones(10)))
+display(HQR(A)[1])
