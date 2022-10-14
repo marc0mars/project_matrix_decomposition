@@ -47,6 +47,14 @@
 
 19)     Wie würde man gute Tests für eine QR-Faktorisierung schreiben, wenn man nicht die Funktion aus Julia verwenden möchte?
 
+20)     Könnte man backward stability auch als Konzept verwenden, um zu messen, wie gut Modelle an sich sind. Sagen wir mal es gibt ein physikalisches Gesetz f und die real ablaufende Welt r und es bekommt Parameter
+        a,b,c,d, die empirisch gemessen werden können. Dann könnte man f als "stabil" oder "backward-stable" bezeichnen, wenn f(a,b,c,d) = r(a+da, b+db, c+dc, d+dd) für bestimmte kleine da, ..., dd.
+
+21)     20) lässt sich tatsächlich noch durch den Begriff conditioning erweitern. Nimmt man zum Beispiel ein chatoisches System, dann ist es "ill conditioned" und backward-stability bringt einem keinen besonderen Vorteil.
+
+22)     Warum verwendet man das absolute value |.| bei der Betrachtung von numerischer Stabilität anstelle einer Norm für Matrizen oder Vektoren
+
+23)     Ist Higham ein stehender Name in der Numerik? Denn zumindest was Stabilität angeht stoße ich andauernd auf seinen Namen.
 ------- Fragen Lineare Algebra
 
 18) Wofür benötigt man die Polarisierungsidentität?
@@ -58,6 +66,7 @@
 3)       Wie würde man das Schur Komplement entdecken? 
 4)       S.3, Algorithm 2.1 Warum kann sigma nicht auch der Betrag von a_11 sein. Überhaupt wundere ich mich hier, warum gerade der goldene Schnitt relevant ist bzw. warum man darauf kommen sollte. --> Hat sich im anderen Paper geklärt
 5)       S.6, Was ist "2x2 pivot E" für ein Objekt in Theorem 5
+6)       L ist nicht unitär, sondern hat nur einsen auf der Diagonalen ("unit lower triangular" heißt nicht "unitary ..."), überhaupt kann eine untere Dreiecksmatrix gar nicht unitär sein, außer es ist die Einheitsmatrix
 
 Begriffe: Gaussian elimination, Cholesky Factorization, LDLT decomposition, Schurcomplement, normwise backward stable, singular, growth factor roh_n, pivoting strategy, tight bound (p.6 3.2), model floating point arithmetic, 2x2 pivot, flop
 
@@ -67,6 +76,7 @@ Begriffe: Gaussian elimination, Cholesky Factorization, LDLT decomposition, Schu
 3)      Die beiden Paper lesen sich zum Teil quasi identisch, das etwas längere Paper ermöglicht noch die Berechnung der decomposition, während die Matrix befüllt wird. Sie wollen beide das gleiche für ihre eigenen leicht abgewandelten Algorithmen zeigen, wobei man sich an dem früheren Paper orieniert
 4)      Beim Theorem 3.1 verstehe ich nicht warum "the computed solution x_hat satisfies ... = y_hat", warum dann nicht gleich y_hat am Anfang?
 5)      Welche Norm wird in dem Paper für Matrizen verwendet? Die 2-Norm? Bzw. inwiefern spielt das keine Rolle, denn die Matrixnormen sind im C und R sowieso alle äquivalent 
+6)      (A+DA)x_hat = b in Theorem 3.2 aims for backward stability. In other words 3.2 is quite a general theorem to get backward stability.
 
 ------- Fragen: Bunchkaufman.jl
 1) Verstehe ich es richtig, dass ich die tridiagonale Matrix, die dabei entsteht dann weiter zerlegen soll?

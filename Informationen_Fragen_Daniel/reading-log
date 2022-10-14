@@ -5,7 +5,7 @@ on documentation    https://www.matecdev.com/posts/julia-package-collaboration.h
 Variante 1,2        http://programming-julia.de/kombinatorik/Permutationen/
 69 to 72, 153 to 170https://www.math.uni-bielefeld.de/~preston/teaching/linalg/files/linalg.pdf
 (interessante Seite)https://learn.microsoft.com/en-us/training/student-hub/
-first read: 1 to 11 Paper: A pivoting strategy for symmetric tridiagonal matrices
-Woche 1, 2, 3       https://www.cs.utexas.edu/users/flame/laff/alaff/chapter06-stability-of-a-numerical-algorithm.html
-einmal durchgelesen (Details manchmal übersprungen) Stability of block LDLT factorization of a symmetric tridiagonal matrix
+read                Paper: A pivoting strategy for symmetric tridiagonal matrices
+Woche 1, 2, 3, 6    https://www.cs.utexas.edu/users/flame/laff/alaff/chapter06-stability-of-a-numerical-algorithm.html
+read                (Details manchmal übersprungen) Stability of block LDLT factorization of a symmetric tridiagonal matrix
                     https://towardsdatascience.com/a-painfully-in-depth-look-at-constructors-in-julia-2053a69bc8c6
