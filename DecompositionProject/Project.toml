@@ -2,3 +2,10 @@ name = "DecompositionProject"
 uuid = "0220a8e8-e92e-4045-9bc5-383fc5c42302"
 authors = ["Marco <htcmarco99@gmail.com>"]
 version = "0.1.0"
+
+[deps]
+BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+Permutations = "2ae35dd2-176d-5d53-8349-f30d82d94d4f"
+Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"

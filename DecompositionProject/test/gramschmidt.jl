@@ -1,7 +1,7 @@
 using LinearAlgebra
 using Plots
 using Test
-include("./gram_schmidt_orth.jl")
+using DecompositionProject
 
 @testset "Q is unitary" begin
     one_mat = [(i == j) ? 1 : 0 for i in 1:7, j in 1:7]
@@ -48,4 +48,4 @@ function benchmark_gs1_vs_gs2()
     plot!(runs, ones(num_runs), label = "ratio one", lw = 3)
 end
 
-benchmark_gs1_vs_gs2()
+# benchmark_gs1_vs_gs2()

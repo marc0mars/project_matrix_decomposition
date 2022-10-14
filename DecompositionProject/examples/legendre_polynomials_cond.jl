@@ -42,6 +42,5 @@ function test_run(num_x_vals, max_n)
 end
 
 # test_run(5000,20)
-
 # just for fun
-display(@benchmark creating_mat_legendre_pol(5000,10))
+# display(@benchmark creating_mat_legendre_pol(5000,10))

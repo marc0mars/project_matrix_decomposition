@@ -1,7 +1,6 @@
 using LinearAlgebra
 using Plots
-include("../Gram-Schmidt/gram_schmidt_orth.jl")
-include("../householder-qr-factorization/householder.jl")
+using DecompositionProject
 
 ϵ = eps()                           # machine epsilon
 A = [1 1 1; 2ϵ 0 0; 0 2ϵ 0; 0 0 2ϵ]
