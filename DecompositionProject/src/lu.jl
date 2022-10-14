@@ -1,4 +1,4 @@
-# VERSION 1-4 DONT UTILIZE PIVOTING
+# VERSIONS 1-4 DONT UTILIZE PIVOTING
 # version 1 seems to me to be the most natural as a first try as it works similar to the proof
 using LinearAlgebra
 using Permutations

@@ -4,7 +4,7 @@ include("bunchkaufman.jl")
 
 include("gramschmidt.jl")
 
-# include("ludecomp.jl")
+include("lu.jl")
 
-# include("test.jl")
+include("householder.jl")
 

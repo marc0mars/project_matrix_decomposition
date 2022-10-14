@@ -51,16 +51,15 @@ println(findmax(A[2:2,1:2]))
 # display(left_right_decomposition_version_2(A)[2])
 
 @testset "lu_decomp_pivot" begin
-    for i in 1:1
+    for i in 1:10
         n = 5  # test size
         M = rand(1:10, n, n)
         b = randperm(n)
-        l,r, perm = lu_decomp_pivot(M)
-        P = Matrix(perm)
-        display(P)
-        display(perm)
+        l,r = left_right_decomposition_version_4(M) 
+        # display(P)
+        # display(perm)
         x = M\b
-        solution = r\(l\(P*b))
+        solution = r\(l\b)
         @test isapprox(x, solution)
     end
 end

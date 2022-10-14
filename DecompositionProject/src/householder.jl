@@ -30,7 +30,7 @@ end
 function HQR(A)
     M = copy(A) # this is misleading because we would rather want to implement HQR!(A) but for testing this is more convenient
     m, n = size(M)
-    # rank(M) == n || throw(error("This matrix is singular!")) 
+    rank(M) == n || throw(error("This matrix is singular!")) 
     t = fill(0.0, n)
     for k in 1:n 
         ᵨ, u₂, tau = housev(M[k:m,k]) 
