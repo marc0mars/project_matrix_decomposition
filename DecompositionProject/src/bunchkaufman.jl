@@ -17,7 +17,7 @@ function bunch_explicit(A)
     k = 1
     L = [(i == j) ? 1.0 : 0.0 for i in 1:n, j in 1:n]
     while k < n
-        s = choosing_pivot_size(A[k:n,k:n])   # set pivot size
+        (k == n-1) ? s = 2 : s = choosingpivot(A[k,k], A[k+1, k+1], A[k+1, k], A[k+2,k+1])   # set pivot size
         if s == 1
             if A[k,k] == 0
                 k += 1
@@ -52,6 +52,48 @@ function bunch_explicit(A)
     return (L,A)
 end
 
+function bunchfast(A::SymTridiagonal)
+    A = copy(A)
+    d, e = A.dv, A.ev
+    n::Int = size(d,1)
+    k::Int = 1
+    L = zeros(n)
+    while k < n
+        (k == n-1) ? s = 2 : s = choosingpivot(d[k], d[k+1], e[k], e[k+1])   # set pivot size
+        if s == 1
+            if d[k] == 0
+                k += 1
+                continue        # skip to the next round
+            end
+            d₁, b₁ = d[k], e[k]
+            # update A_k+1,k+1
+            d[k+1] -= b₁^2*(1/d₁) 
+            L[k] = b₁*(1/d₁)
+            e[k] = 0 
+            e[k] = 0
+            k += 1              # as we only had a one-block
+        else # s == 2
+            # when the last block is chosen to be 2 by 2 we can stop
+            if(k == n-1)
+                k += 1 
+                continue
+            end    
+            d₁, d₂, b₁, b₂ = d[k], d[k+1], e[k], e[k+1]
+            Δ = d₁*d₂-b₁^2  # det of the 2x2 block
+            # update A[k+2,k+2]
+            d[k+2] -= d₁*b₂^2/Δ
+            # updating L
+            L[k] = -b₂*b₁/Δ
+            L[k+1] = b₂*d₁/Δ
+            # deleting the zero corners
+            e[k+1] = 0
+            k += 2
+        end
+    end
+    return (L,A)
+end
+
+
 # we can try different pivoting strategies
 
 """
@@ -70,6 +112,15 @@ function choosing_pivot_size(B)
     end
 end
 
+function choosingpivot(d₁, d₂, b₁, b₂)
+    α = (sqrt(5)-1)/2
+    Δ = d₁*d₂-b₁^2
+    if(abs(Δ) <= α*abs(d₁*b₂) || abs(b₂*Δ) <= α*abs(d₁^2*b₂))
+        return 1
+    else
+        return 2
+    end
+end
 # getting the different matrices
 
 function get_L(A)

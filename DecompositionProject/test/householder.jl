@@ -2,7 +2,7 @@ using LinearAlgebra
 using Test
 using DecompositionProject
 
-@testset "HQR does not accept singular matrices" begin
+@testset "Testing HQR" begin
     A = rand(5,3)*[1 1 0;0 0 0; 0 0 1]
     try
         HQR(A)

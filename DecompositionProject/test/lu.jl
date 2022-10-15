@@ -50,7 +50,7 @@ println(findmax(A[2:2,1:2]))
 # display(left_right_decomposition_version_2(A)[1])
 # display(left_right_decomposition_version_2(A)[2])
 
-@testset "lu_decomp_pivot" begin
+@testset "Testing lu_decomp_pivot" begin
     for i in 1:10
         n = 5  # test size
         M = rand(1:10, n, n)
