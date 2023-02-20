@@ -52,47 +52,43 @@ function bunch_explicit(A)
     return (L,A)
 end
 
-function bunchfast(A::SymTridiagonal)
-    A = copy(A)
+function bunchfast!(A::SymTridiagonal)
     d, e = A.dv, A.ev
-    n::Int = size(d,1)
-    k::Int = 1
-    L = zeros(n)
+    n = size(d,1)
+    k = 1
+    L = []
     while k < n
-        (k == n-1) ? s = 2 : s = choosingpivot(d[k], d[k+1], e[k], e[k+1])   # set pivot size
+        s = (k == n-1) ? 2 : choosingpivot(d[k], d[k+1], e[k], e[k+1])   # set pivot size
         if s == 1
-            if d[k] == 0
+            if iszero(d[k])
                 k += 1
                 continue        # skip to the next round
             end
             d₁, b₁ = d[k], e[k]
-            # update A_k+1,k+1
-            d[k+1] -= b₁^2*(1/d₁) 
-            L[k] = b₁*(1/d₁)
+            d[k+1] -= b₁^2/d₁
+            push!(L, b₁/d₁)
             e[k] = 0 
-            e[k] = 0
-            k += 1              # as we only had a one-block
+            k += 1            
         else # s == 2
-            # when the last block is chosen to be 2 by 2 we can stop
-            if(k == n-1)
+            if k == n-1
                 k += 1 
                 continue
             end    
             d₁, d₂, b₁, b₂ = d[k], d[k+1], e[k], e[k+1]
             Δ = d₁*d₂-b₁^2  # det of the 2x2 block
-            # update A[k+2,k+2]
             d[k+2] -= d₁*b₂^2/Δ
-            # updating L
-            L[k] = -b₂*b₁/Δ
-            L[k+1] = b₂*d₁/Δ
-            # deleting the zero corners
+            push!(L, (-b₂*b₁/Δ, b₂*d₁/Δ)) 
             e[k+1] = 0
             k += 2
         end
     end
-    return (L,A)
+    return (L, A) # return BunchKaufman(...)
 end
+bunchfast(A::SymTridiagonal{T}) where {T} = bunchfast!(LinearAlgebra.copymutable_oftype(A, typeof(sqrt(oneunit(T)))))
 
+function ldiv!(F::BunchKaufman{<:Any,<:SymTridiagonal}, B::AbstractMatrix)
+
+end
 
 # we can try different pivoting strategies
 
@@ -115,17 +111,13 @@ end
 function choosingpivot(d₁, d₂, b₁, b₂)
     α = (sqrt(5)-1)/2
     Δ = d₁*d₂-b₁^2
-    if(abs(Δ) <= α*abs(d₁*b₂) || abs(b₂*Δ) <= α*abs(d₁^2*b₂))
-        return 1
-    else
-        return 2
-    end
+    return (abs(Δ) <= α*abs(d₁*b₂) || abs(b₂*Δ) <= α*abs(d₁^2*b₂)) ? 1 : 2
 end
 # getting the different matrices
 
-function get_L(A)
-
-end
+# function make_L(l)
+#     L = LowerTriangular()
+# end
 
 # first primitive recursive implementation of Bunch
 

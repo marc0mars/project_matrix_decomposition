@@ -67,6 +67,7 @@
 4)       S.3, Algorithm 2.1 Warum kann sigma nicht auch der Betrag von a_11 sein. Überhaupt wundere ich mich hier, warum gerade der goldene Schnitt relevant ist bzw. warum man darauf kommen sollte. --> Hat sich im anderen Paper geklärt
 5)       S.6, Was ist "2x2 pivot E" für ein Objekt in Theorem 5
 6)       L ist nicht unitär, sondern hat nur einsen auf der Diagonalen ("unit lower triangular" heißt nicht "unitary ..."), überhaupt kann eine untere Dreiecksmatrix gar nicht unitär sein, außer es ist die Einheitsmatrix
+7)       Was passier, wenn nur noch ein 2x2 Block übrig bleibt? Denn beta_3 ist hier nicht mehr definiert. Ich setze dafür einfach einen 2x2-Block, das sollte funktionieren
 
 Begriffe: Gaussian elimination, Cholesky Factorization, LDLT decomposition, Schurcomplement, normwise backward stable, singular, growth factor roh_n, pivoting strategy, tight bound (p.6 3.2), model floating point arithmetic, 2x2 pivot, flop
 

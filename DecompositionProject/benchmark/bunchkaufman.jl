@@ -2,8 +2,8 @@ using BenchmarkTools
 using LinearAlgebra
 using DecompositionProject
 
-A = (Symmetric(rand(1000,1000)))                                # make symmetric
-A = SymTridiagonal(A)                                           # make tridiagonal
+A = (Symmetric(rand(100,100)))                                # make symmetric
+
 println("This is my bunch")
 b = @benchmark bunchfast(A)
 A = Matrix(A)
